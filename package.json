@@ -4,7 +4,10 @@
   "description": "node-express-starter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=dev nodemon --exec npm-run-all --sequential webpack-dev server",
+    "server": "babel-node server",
+    "webpack-dev": "webpack --config webpack/dev",
+    "dev": "NODE_ENV=dev nodemon --exec npm-run-all --sequential webpack-dev server"
   },
   "repository": {
     "type": "git",
@@ -13,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "@babel/runtime": "^7.12.5",
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
